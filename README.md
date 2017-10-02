@@ -1,3 +1,14 @@
+# LunchDecider
+
+This bot is a lunch randomizer to help groups make the definitive decision on lunch! People input where they want to eat lunch, and LunchDecider picks a place.
+
+## Commands
+
+    I want to eat at In N Out
+
+Submit a lunch place.
+
+
 # myhubot
 
 myhubot is a chat bot built on the [Hubot][hubot] framework. It was
@@ -212,3 +223,4 @@ Add the subdomain hubot should connect to. If you web URL looks like
 
 You may want to get comfortable with `heroku logs` and `heroku restart` if
 you're having issues.
+
