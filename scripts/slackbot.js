@@ -27,7 +27,7 @@ module.exports = function(robot) {
         places.push(restaurant);
         return msg.reply(restaurant + ' is delicious!' + places);
       });
-      robot.respond(/Where are we eating?/i, function(msg) {
+      robot.respond(/Where are we eating/i, function(msg) {
         if (places.length < 1) {
           return msg.send("Give me some options and I'll let you know!");
         } 
