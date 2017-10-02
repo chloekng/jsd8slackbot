@@ -37,7 +37,7 @@ module.exports = function(robot) {
       });
       robot.respond(/What are the options?/i, function(msg) {
         if (places.length < 1) {
-          return msg.send("Write 'I want to eat lunch at _____' to let me know!");
+          return msg.send("Write 'I want to eat at _____' to let me know!");
         } else {
           return msg.send("Here are all the places: " + places.join(", "));
         }
