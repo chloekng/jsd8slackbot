@@ -39,7 +39,7 @@ module.exports = function(robot) {
         if (places.length < 1) {
           return msg.send("Write 'I want to eat lunch at _____' to let me know!")
         } else {
-          return msg.reply(places);
+          return msg.send(places);
         }
       });
       robot.respond(/reset/i, function(msg) {
