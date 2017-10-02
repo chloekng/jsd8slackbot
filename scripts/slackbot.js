@@ -21,7 +21,7 @@
 module.exports = function(robot) {
   //  YOUR CODE HERE
       var places = [];
-      robot.hear(/I want to eat lunch at (.*)/i, function(msg) {
+      robot.respond(/I want to eat lunch at (.*)/i, function(msg) {
         var restaurant;
         restaurant = msg.match[1];
         places.push(restaurant);
