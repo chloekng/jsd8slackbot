@@ -21,23 +21,32 @@
 module.exports = function(robot) {
   //  YOUR CODE HERE
       var places = [];
-      robot.respond(/I want to eat lunch at (.*)/i, function(msg) {
+      robot.hear(/I want to eat lunch at (.*)/i, function(msg) {
         var restaurant;
         restaurant = msg.match[1];
         places.push(restaurant);
-        return msg.reply(restaurant + ' is delicious!' + places);
+        return msg.reply(restaurant + ' is delicious!');
       });
-      robot.respond(/Where are we eating/i, function(msg) {
+      robot.respond(/Where are we eating?/i, function(msg) {
         if (places.length < 1) {
           return msg.send("Give me some options and I'll let you know!");
         } 
         else {
-          return msg.send(msg.random(places));
+          return msg.send("Have a great lunch at " + msg.random(places) + "!");
         }
       });
       robot.respond(/What are the options?/i, function(msg) {
-        return msg.reply(places);
+        if (places.length < 1) {
+          return msg.send("Write 'I want to eat lunch at _____' to let me know!")
+        } else {
+          return msg.reply(places);
+        }
       });
+      robot.respond(/reset/i, function(msg) {
+        places = [];
+        console.log(places);
+        return msg.send("Hope you had a great lunch! Until next time!")
+      })
 }
 
 /************************************
