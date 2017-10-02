@@ -41,7 +41,7 @@ module.exports = function(robot) {
           return msg.send("Write 'I want to eat lunch at _____' to let me know!");
         } else {
           // return msg.send(robot.brain.get('places'));
-          return msg.send(places);
+          return msg.send("Here are all the places: " + places);
         }
       });
       robot.respond(/reset/i, function(msg) {
