@@ -1,12 +1,24 @@
 # LunchDecider
 
-This bot is a lunch randomizer to help groups make the definitive decision on lunch! People input where they want to eat lunch, and LunchDecider picks a place.
+This bot is a lunch randomizer to help groups make the definitive decision on lunch! People input where they want to eat lunch, and the bot picks a place.
 
 ## Commands
 
+Submit a lunch place:
+
     I want to eat at In N Out
 
-Submit a lunch place.
+See what has been submitted: 
+
+    @botname What are the options?
+
+Have the bot choose a place: 
+
+    @botname Where are we eating?
+
+Clear places submitted:
+
+    @botname Reset
 
 
 # myhubot
