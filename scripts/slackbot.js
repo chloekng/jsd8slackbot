@@ -26,7 +26,7 @@ module.exports = function(robot) {
         restaurant = msg.match[1];
         places.push(restaurant);
         robot.brain.set('places', places);
-        return msg.reply(restaurant + ' is delicious!');
+        return msg.reply(restaurant + " is delicious! Added to the list!");
       });
       robot.respond(/Where are we eating?/i, function(msg) {
         if (places.length < 1) {
@@ -40,7 +40,7 @@ module.exports = function(robot) {
         if (places.length < 1) {
           return msg.send("Write 'I want to eat lunch at _____' to let me know!")
         } else {
-          return robot.brain.get('places');
+          return msg.send(robot.brain.get('places'));
         }
       });
       robot.respond(/reset/i, function(msg) {
