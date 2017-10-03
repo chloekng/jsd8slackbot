@@ -20,14 +20,18 @@
 
 module.exports = function(robot) {
   //  YOUR CODE HERE
+      /* Creates an array for all the places people submit */
       var places = [];
+      /* How people submit a place to eat at */
       robot.hear(/I want to eat at (.*)/i, function(msg) {
         var restaurant;
         restaurant = msg.match[1];
         places.push(restaurant);
         return msg.reply(restaurant + " is delicious! Added to the list!");
       });
+      /* Generates a random place to eat */
       robot.respond(/Where are we eating?/i, function(msg) {
+        /* If there are no options submitted yet */
         if (places.length < 1) {
           return msg.send("Give me some options and I'll let you know!");
         } 
@@ -35,13 +39,16 @@ module.exports = function(robot) {
           return msg.send("Have a great lunch at " + msg.random(places) + "!");
         }
       });
+      /* Shows people what places there are to eat */
       robot.respond(/What are the options?/i, function(msg) {
+        /* If there are no options submitted yet */
         if (places.length < 1) {
           return msg.send("Write 'I want to eat at _____' to let me know!");
         } else {
           return msg.send("Here are all the places: " + places.join(", "));
         }
       });
+      /* Resets the bot by clearing the list of places */
       robot.respond(/reset/i, function(msg) {
         places = [];
         console.log(places);
